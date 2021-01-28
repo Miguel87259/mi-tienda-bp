@@ -1,0 +1,37 @@
+<div nz-row>
+
+  <div nz-col nzSpan="24" class="container">
+    <div class="img-shop animate__animated animate__backInDown"></div>
+  </div>
+
+  <div nz-col nzSpan="24" style="text-align: -webkit-center;">
+
+    <div class="container-menu" >
+
+      <nz-card class="card animate__animated animate__bounceIn" [nzCover]="clienteCover" [routerLink]="['/clientes']">
+        <nz-card-meta nzTitle="Clientes"></nz-card-meta>
+      </nz-card>
+      <ng-template #clienteCover>
+        <img alt="cliente" src="../../../assets/cliente.png" class="img-option"/>
+      </ng-template>
+
+      <nz-card class="card animate__animated animate__bounceIn" [nzCover]="productoCover" [routerLink]="['/productos']">
+        <nz-card-meta nzTitle="Productos"></nz-card-meta>
+      </nz-card>
+      <ng-template #productoCover>
+        <img alt="cliente" src="../../../assets/recibido.png" class="img-option"/>
+      </ng-template>
+
+      <nz-card class="card animate__animated animate__bounceIn" [nzCover]="ordenesCover" [routerLink]="['/ordenes']">
+        <nz-card-meta nzTitle="Ordenes"></nz-card-meta>
+      </nz-card>
+      <ng-template #ordenesCover>
+        <img alt="cliente" src="../../../assets/escritorio.png" class="img-option"/>
+      </ng-template>
+
+    </div>
+
+  </div>
+
+</div>
+

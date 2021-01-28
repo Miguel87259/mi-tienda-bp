@@ -1,0 +1,42 @@
+<nz-layout>
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item [routerLink]="['/home']"><i class="fas fa-home"></i></li>
+      <li nz-menu-item [routerLink]="['/clientes']"><i class="fas fa-users"></i> Clientes</li>
+      <li nz-menu-item [routerLink]="['/productos']"><i class="fas fa-box-open"></i> Productos</li>
+      <li nz-menu-item [routerLink]="['/ordenes']"><i class="fas fa-desktop"></i> Ordenes</li>
+    </ul>
+  </nz-header>
+  <div nz-row>
+    <div nz-col nzSpan="24" style="text-align: -webkit-center;">
+      <div class="table">
+        <button nz-button nzType="primary">Realizar orden</button>
+        <nz-table #basicTable [nzData]="listOfData">
+          <thead>
+            <tr>
+              <th>ID Producto</th>
+              <th>ID Cliente</th>
+              <th>ID Orden</th>
+              <th>Cantidad</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of basicTable.data">
+              <td>{{ data.name }}</td>
+              <td>{{ data.age }}</td>
+              <td>{{ data.address }}</td>
+              <td>
+                <a>Action 一 {{ data.name }}</a>
+                <nz-divider nzType="vertical"></nz-divider>
+                <a>Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
+    </div>
+  </div>
+
+</nz-layout>

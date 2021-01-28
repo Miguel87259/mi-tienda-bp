@@ -1,0 +1,28 @@
+.img-shop{
+  background-image: url("../../../assets/logo-home.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+}
+
+.container{
+  text-align: -webkit-center;
+}
+
+.container-menu{
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+}
+
+.card{
+  width:125px;
+  border: 0px;
+  margin-right: 50px;
+}
+
+.img-option:hover{
+  transform: scale(1.1);
+}
