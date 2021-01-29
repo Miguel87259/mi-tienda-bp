@@ -1,0 +1,11 @@
+.container-form{
+  text-align: justify;
+  width: 400px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.div-buttons{
+  display: inline-flex;
+  align-items: center;
+}

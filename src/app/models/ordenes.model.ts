@@ -1,7 +1,7 @@
 export class Ordenes {
   idProducto: number;
   idCliente: number;
-  idOrden: number;
+  id: number;
   cantidad: number;
   fecha: string;
 }

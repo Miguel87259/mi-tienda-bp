@@ -1,1 +1,65 @@
-<p>form-ordenes works!</p>
+<nz-layout>
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item [routerLink]="['/home']"><i class="fas fa-home"></i></li>
+      <li nz-menu-item [routerLink]="['/clientes']"><i class="fas fa-users"></i> Clientes</li>
+      <li nz-menu-item [routerLink]="['/productos']"><i class="fas fa-box-open"></i> Productos</li>
+      <li nz-menu-item [routerLink]="['/ordenes']"><i class="fas fa-desktop"></i> Ordenes</li>
+    </ul>
+  </nz-header>
+  <div nz-row>
+    <div nz-col nzSpan="24" style="text-align: -webkit-center;">
+      <img alt="cliente" src="../../../assets/escritorio.png" width="100px" style="margin-top: 20px;"/>
+      <div class="container-form">
+        <h3>Agregar Orden</h3>
+        <form nz-form [formGroup]="ordenesForm" class="login-form" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor selecciona un cliente">
+              <nz-input-group >
+                <nz-select formControlName="idCliente" style="width: 100%;" nzShowSearch nzPlaceHolder="Selecciona un cliente">
+                  <nz-option *ngFor="let data of selectCliente" [nzValue]="data.id" [nzLabel]="data.nombre"></nz-option>
+                </nz-select>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor selecciona un producto">
+              <nz-input-group >
+                <nz-select formControlName="idProducto" style="width: 100%;" nzShowSearch nzPlaceHolder="Selecciona un producto">
+                  <nz-option *ngFor="let data of selectProducto" [nzValue]="data.id" [nzLabel]="data.nombre"></nz-option>
+                </nz-select>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor ingresa la cantidad">
+              <nz-input-group >
+                <label>Cantidad:</label><br>
+                <nz-input-number
+                formControlName="cantidad"
+                [nzMin]="1"
+                [nzStep]="1"
+              ></nz-input-number>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor ingresa una fecha">
+              <nz-input-group >
+                <nz-date-picker [nzFormat]="dateFormat" nzPlaceHolder="dd/mm/yyyy" formControlName="fecha"></nz-date-picker>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <div>
+            <button nz-button [nzType]="'primary'" [disabled]="!ordenesForm.valid">Guardar</button>
+            <button nz-button [nzType]="'primary'"nzDanger style="float: right;" [routerLink]="['/ordenes']">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</nz-layout>
+
+

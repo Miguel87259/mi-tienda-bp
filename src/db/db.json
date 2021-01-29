@@ -1,26 +1,49 @@
 {
   "clientes": [
     {
-      "id": "1",
+      "id": 1,
       "nombre": "Juan Carlos",
       "apellidos": "Ramirez"
+    },
+    {
+      "nombre": "Carlos Alexander",
+      "apellidos": "Ramirez",
+      "id": 2
+    },
+    {
+      "nombre": "Mario Alexander",
+      "apellidos": "Lopez",
+      "id": 3
     }
   ],
   "ordenes": [
     {
-      "idProducto": "1",
-      "idCliente": "1",
-      "idOrden": "1",
+      "idProducto": 1,
+      "idCliente": 1,
+      "id": 1,
       "cantidad": "1",
       "fecha": "01-27-2021"
+    },
+    {
+      "idProducto": 1,
+      "idCliente": 1,
+      "cantidad": 5,
+      "fecha": "2021-01-21T06:27:42.986Z",
+      "id": 2
     }
   ],
   "productos": [
     {
-      "id": "1",
+      "id": 1,
       "nombre": "Salsa de Tomate",
       "descripcion": "Salsa de Tomate KG",
       "precio": "10.00"
+    },
+    {
+      "nombre": "Leche LaLa",
+      "descripcion": "leche de 12onz",
+      "precio": 5.5,
+      "id": 2
     }
   ]
 }

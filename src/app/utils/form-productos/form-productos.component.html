@@ -1,1 +1,56 @@
-<p>form-productos works!</p>
+<nz-layout>
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item [routerLink]="['/home']"><i class="fas fa-home"></i></li>
+      <li nz-menu-item [routerLink]="['/clientes']"><i class="fas fa-users"></i> Clientes</li>
+      <li nz-menu-item [routerLink]="['/productos']"><i class="fas fa-box-open"></i> Productos</li>
+      <li nz-menu-item [routerLink]="['/ordenes']"><i class="fas fa-desktop"></i> Ordenes</li>
+    </ul>
+  </nz-header>
+  <div nz-row>
+    <div nz-col nzSpan="24" style="text-align: -webkit-center;">
+      <img alt="cliente" src="../../../assets/recibido.png" width="100px" style="margin-top: 20px;"/>
+      <div class="container-form">
+        <h3>Agregar Producto</h3>
+        <form nz-form [formGroup]="productosForm" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor ingresa un nombre">
+              <nz-input-group >
+                <input type="text" nz-input formControlName="nombre" placeholder="Nombre" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor ingresa la descripcion">
+              <nz-input-group >
+                <textarea formControlName="descripcion" nz-input></textarea>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor ingresa un precio">
+              <nz-input-group >
+                <nz-input-number
+                formControlName="precio"
+                [nzMin]="1"
+                [nzMax]="100"
+                [nzStep]="1"
+                [nzFormatter]="formatterDollar"
+                [nzParser]="parserDollar"
+              ></nz-input-number>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <div>
+            <button nz-button [nzType]="'primary'" [disabled]="!productosForm.valid">Guardar</button>
+            <button nz-button [nzType]="'primary'"nzDanger style="float: right;" [routerLink]="['/productos']">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</nz-layout>
+
+

@@ -10,9 +10,10 @@
   </nz-header>
   <div nz-row>
     <div nz-col nzSpan="24" style="text-align: -webkit-center;">
+      <img alt="cliente" src="../../../assets/cliente.png" width="100px" style="margin-top: 20px;"/>
       <div class="table">
-        <button nz-button nzType="primary">Agregar cliente</button>
-        <nz-table #basicTable [nzData]="listOfData">
+        <button nz-button nzType="primary" [routerLink]="['/clientes/agregar']">Agregar cliente</button>
+        <nz-table #tableCliente [nzData]="dataTable">
           <thead>
             <tr>
               <th>ID</th>
@@ -21,15 +22,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let data of basicTable.data">
-              <td>{{ data.name }}</td>
-              <td>{{ data.age }}</td>
-              <td>{{ data.address }}</td>
-              <td>
-                <a>Action 一 {{ data.name }}</a>
-                <nz-divider nzType="vertical"></nz-divider>
-                <a>Delete</a>
-              </td>
+            <tr *ngFor="let data of tableCliente.data">
+              <td>{{ data.id }}</td>
+              <td>{{ data.nombre }}</td>
+              <td>{{ data.apellidos }}</td>
             </tr>
           </tbody>
         </nz-table>

@@ -1,1 +1,42 @@
-<p>form-cliente works!</p>
+<nz-layout>
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item [routerLink]="['/home']"><i class="fas fa-home"></i></li>
+      <li nz-menu-item [routerLink]="['/clientes']"><i class="fas fa-users"></i> Clientes</li>
+      <li nz-menu-item [routerLink]="['/productos']"><i class="fas fa-box-open"></i> Productos</li>
+      <li nz-menu-item [routerLink]="['/ordenes']"><i class="fas fa-desktop"></i> Ordenes</li>
+    </ul>
+  </nz-header>
+  <div nz-row>
+    <div nz-col nzSpan="24" style="text-align: -webkit-center;">
+      <img alt="cliente" src="../../../assets/cliente.png" width="100px" style="margin-top: 20px;"/>
+      <div class="container-form">
+        <h3>Agregar Cliente</h3>
+        <form nz-form [formGroup]="formCliente" class="login-form" (ngSubmit)="submitForm()">
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor ingresa tu nombre">
+              <nz-input-group >
+                <input type="text" nz-input formControlName="nombre" placeholder="Nombres" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="Por favor ingresa tus apellidos">
+              <nz-input-group >
+                <input type="text" nz-input formControlName="apellidos" placeholder="Apellidos" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <div>
+            <button nz-button [nzType]="'primary'" [disabled]="!formCliente.valid">Guardar</button>
+            <button nz-button [nzType]="'primary'"nzDanger style="float: right;" [routerLink]="['/clientes']">Cancelar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</nz-layout>
+
+
